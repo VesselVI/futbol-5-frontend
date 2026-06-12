@@ -1,0 +1,105 @@
+body {
+    background: #f3f4fb;
+    font-family: "Poppins", Arial;
+}
+
+.btn {
+    background: var(--light);
+    color: var(--blueMid);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    color: var(--blueMid);
+    transform: translateY(-2px);
+}
+
+/*header*/
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.main-nav {
+    transition: 0.3s ease;
+    background: transparent;
+}
+
+.main-nav.scrolled {
+    background: var(--blueMid);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.navbar-toggler {
+    border: none;
+    color: var(--light) !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.nav-link {
+    color: var(--light) !important;
+    font-weight: 500;
+}
+
+.brand-logo i {
+    color: var(--light) !important;
+}
+
+.brand-logo h4 {
+    color: var(--light) !important;
+}
+
+.hero-modern {
+    padding: 120px 0 90px;
+    background: linear-gradient(180deg,
+            #4b3df2 0%,
+            #8a7aff 20%,
+            #bfc4ff 45%,
+            #eef0ff 70%,
+            #ffffff 100%);
+    border-radius: 0 0 35px 35px;
+    color: #fff;
+}
+
+/* TEXT */
+.hero-title {
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.hero-desc {
+    margin-top: 10px;
+    max-width: 420px;
+    opacity: 0.9;
+    color: rgb(255, 255, 255);
+}
+
+/* BUTTONS */
+.hero-btn-primary {
+    background: #fff;
+    color: var(--primary);
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.hero-btn-outline {
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 600;
+}
