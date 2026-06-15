@@ -15,7 +15,7 @@ AOS.init({
     once: true,
 });
 
-// عداد الأرقام المتزايدة
+
 const counters = document.querySelectorAll(".counter");
 
 counters.forEach((counter) => {
@@ -35,15 +35,16 @@ counters.forEach((counter) => {
         }
     };
 
-    // تشغيل العد عند دخول العنصر للشاشة
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 updateCounter();
                 observer.unobserve(counter);
             }
+
         });
     });
+
 
     observer.observe(counter);
 });

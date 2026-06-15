@@ -1,10 +1,14 @@
 :root {
     --primary: #1A365D;
-    --buttons: #E65F2B;
+    --buttons: #e16c3e;
     --attention: #2C5E43;
     --bodyText: #212529;
     --general: #F8F9FA;
 
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -13,7 +17,7 @@ body {
 }
 
 .btn {
-    background: var(--bodyText);
+    background: var(--attention);
     color: var(--general);
     border: none;
     border-radius: 8px;
@@ -24,8 +28,9 @@ body {
 }
 
 .btn:hover {
-    color: var(--blueMid);
-    transform: translateY(-2px);
+    background: var(--buttons);
+    text-shadow: 2px 1px 5px rgb(147, 144, 144);
+    transform: translateY(-3px);
 }
 
 /*header*/
@@ -36,7 +41,7 @@ body {
 }
 
 .main-nav {
-    transition: 0.3s ease;
+    transition: 0.5s ease;
     background: transparent ();
 
 }
@@ -47,7 +52,10 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
+.brand-logo {
+    color: var(--general);
 
+}
 
 .logo-icon {
     width: 28px;
@@ -65,18 +73,11 @@ body {
 }
 
 .nav-link {
-    color: var(--bodyText) !important;
+    color: var(--general) !important;
     font-weight: 800;
     font-size: 1.1rem;
 }
 
-.brand-logo i {
-    color: var(--light) !important;
-}
-
-.brand-logo h4 {
-    color: var(--light) !important;
-}
 
 .hero-modern {
     padding: 120px 0 90px;
@@ -133,7 +134,7 @@ body {
 
 
 .appointment-bar {
-    background: var(--attention);
+    background: var(--primary);
     border-radius: 20px;
     padding: 32px 20px;
     margin-top: -90px;
@@ -149,7 +150,7 @@ body {
 
 
 .make-btn {
-    background: var(--bodyText);
+    background: var(--buttons);
     color: var(--general);
     font-weight: 600;
     border-radius: 25px;
@@ -184,7 +185,7 @@ body {
 
 /* Stats Section */
 .stats-box {
-    background: linear-gradient(135deg, #6b63ff, #a69eff);
+    background: linear-gradient(135deg, var(--primary), #5d8268);
     padding: 28px 35px;
     border-radius: 18px;
     color: #fff;
@@ -193,7 +194,7 @@ body {
 
 .stats-icon {
     font-size: 36px;
-    color: var(--light);
+    color: var(--attention);
     margin-bottom: 8px;
 }
 
@@ -208,61 +209,12 @@ body {
     font-size: 14px;
 }
 
-/* Testimonial Section */
-.testimonial-box {
-    border-radius: 18px;
-    overflow: hidden;
-}
-
-/* الصورة */
-.testimonial-img {
-    width: 100%;
-    height: 350px;
+.blog-card .field-img-1 img {
+    width: 100px;
+    min-height: 200px;
     object-fit: cover;
-}
 
-/* اليمين */
-.testimonial-content {
-    padding: 35px;
-    text-align: center;
-}
 
-/* عنوان صغير */
-.tag {
-    color: var(--blueMid);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-/* رمز الاقتباس */
-.quote-icon {
-    font-size: 32px;
-    color: var(--blueMid);
-    margin: 10px 0;
-}
-
-/* نص الريفيو */
-.testimonial-text {
-    color: #666;
-    font-style: italic;
-    max-width: 420px;
-    margin: auto;
-}
-
-/* الشخص */
-.review-person {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
-}
-
-.review-avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    object-fit: cover;
 }
 
 /*  blog css*/
@@ -272,10 +224,9 @@ body {
     gap: 12px;
 }
 
-.blog-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 12px;
+.blog-card img {
+    width: 100%;
+    height: 20vw;
     object-fit: cover;
 }
 
