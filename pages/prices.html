@@ -8,12 +8,15 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-    <script src="/assets/js/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <script src="/assets/js/main.js" defer></script>
+
+    <link rel="stylesheet" href="/assets/css/prices.css">
     <title>Futbol 5</title>
 </head>
 
@@ -31,19 +34,16 @@
                 <!-- Desktop Menu (visible on large screesns only) -->
                 <ul class="nav d-none d-lg-flex">
                     <li class="nav-item"><a class="nav-link " href="/index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link " href="/pages/prices.html">Precios</a></li>
-                    <li class="nav-item"><a class="nav-link " href="#Canchas">Canchas</a></li>
+                    < </ul>
 
-                </ul>
+                        <a href="#" class="btn px-6 d-none d-lg-block rentBtn">Alquilar</a>
 
-                <a href="#" class="btn px-6 d-none d-lg-block rentBtn">Alquilar</a>
+                        <!-- Burger Button (Mobile Only) -->
+                        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#mobileMenu">
 
-                <!-- Burger Button (Mobile Only) -->
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileMenu">
-
-                    <i class="bi bi-list fs-1"></i>
-                </button>
+                            <i class="bi bi-list fs-1"></i>
+                        </button>
 
             </div>
         </nav>
@@ -80,230 +80,312 @@
 
 
     </header>
-    <!-- Hero Section -->
-    <section class="hero-modern">
-        <div class="container">
-            <div class="row align-items-center">
-
-                <!-- LEFT TEXT -->
-                <div class="col-md-6">
-
-                    <h1 class="hero-title">
-                        ¿Sin lugar para el fútbol 5? Asegura tu hora ya. </h1>
-
-                    <p class="hero-desc">
-                        Sin llamadas eternas ni mensajes ignorados. Entra, elige el horario que mejor les quede a todos
-                        y asegura tu cancha antes de que te la ganen.
-                    </p>
-
-                    <div class="d-flex gap-3 mt-3">
-                        <a class="btn hero-btn px-4" href="#Canchas">Ver nuestras canchas</a>
-                    </div>
 
 
+    <!-- hero -->
 
-                </div>
+    <section class="hero-section py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">
+                Precios
+            </h1>
 
-            </div>
-        </div>
-    </section>
-    <!-- Appointment Bar Section -->
-    <section class="container appointment-bar">
 
-        <div class="row g-2 align-items">
-
-            <div class="col-md-2">
-                <label class="form-label fw-semibold">Nombre</label>
-                <input type="text" class="form-control form-field" placeholder="Tu nombre...">
-            </div>
-
-            <div class="col-md-2">
-                <label class="form-label fw-semibold">Email</label>
-                <input type="email" class="form-control form-field" placeholder="ejemplo@direccion.com">
-            </div>
-
-            <div class="col-md-2">
-                <label class="form-label fw-semibold">Tipo de cancha</label>
-                <select class="form-select form-field">
-                    <option>Seleccionar</option>
-                    <option>Cancha de 5</option>
-                    <option>Cancha de 7</option>
-                    <option>Cancha de 8</option>
-                    <option>Cancha de 11</option>
-                </select>
-            </div>
-
-            <div class="col-md-2">
-                <label class="form-label fw-semibold">Fecha</label>
-                <input type="date" class="form-control form-field">
-            </div>
-
-            <div class="col-md-2">
-                <label class="form-label fw-semibold">Horario</label>
-                <select class="form-select form-field">
-                    <option>Seleccionar</option>
-                    <option>11:00</option>
-                    <option>12:00</option>
-                    <option>12:30</option>
-                    <option>13:00</option>
-                </select>
-            </div>
-
-            <div class="col-md-2 d-flex align-items-end">
-                <button class="btn make-btn w-100">
-                    Pedir Turno
-                </button>
-            </div>
-
-        </div>
-
-    </section>
-    <!-- Caracteristicas -->
-    <section class="container py-5 features-grid" data-aos="fade-up">
-
-        <div class="row g-4">
-
-            <div class="col-md-4 feature-col" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-item">
-                    <i class="bi bi-stars feature-icon"></i>
-                    <h5>Césped Pro</h5>
-                    <p>Alfombra sintética de última generación con caucho Premium. Máximo agarre, pique perfecto y
-                        protección contra lesiones.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 feature-col" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-item">
-                    <i class="bi bi-person-lines-fill feature-icon"></i>
-                    <h5>Iluminación LED</h5>
-                    <p>Reflectores de alta potencia sin zonas oscuras. Visibilidad total para jugar de noche como si
-                        fuera de día.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 feature-col " data-aos="fade-up" data-aos-delay="400">
-                <div class="feature-item">
-                    <i class="bi bi-search-heart feature-icon"></i>
-
-                    <h5>Tercer Tiempo</h5>
-                    <p>Vestuarios con ducha caliente, lockers y buffet con bebidas heladas para el post-partido.</p>
-                </div>
-            </div>
-
-        </div>
-        <div id="Canchas"></div>
-    </section>
-
-    <!-- Canchas -->
-    <section class="container my-5" data-aos="fade-up">
-
-        <div class="text-center mb-4">
-
-            <h2 class="fw-bold">Nuestras canchas</h2>
-            <p class="text-muted">
-                Contamos con las mejores canchas para que se adapten a lo que buscas.
+            <p class="lead">
+                Reserva las mejores canchas de la ciudad.
             </p>
         </div>
 
+
+    </section>
+
+    <!-- pricing -->
+
+    <section class="container-prices py-5">
+
+        ```
+        <div class="text-center mb-5">
+            <h2>Selecciona tu cancha</h2>
+        </div>
+
         <div class="row g-4">
 
-            <!-- Cancha de Futbol 5 -->
-            <div class="col-md-6">
-                <div class="blog-card">
+            <!-- CARD -->
+            <div class="card-container col-lg-3 col-md-6">
+                <div class="card h-100">
 
-                    <img src="/assets/img/Cancha-1.webp" alt="cancha-5">
+                    <img src="/assets/img/Cancha-1.webp" class="card-img-top" alt="Cancha Futbol 5">
 
-                    <div class="blog-content">
-                        <h5 class="fw-bold">
-                            Cancha de futbol 5
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Fútbol 5
                         </h5>
 
-                        <small class="text-muted">Césped Sintético</small>
-
-                        <p>
-                            Medidas reglamentarias ideales para un partido rápido y dinámico entre amigos. Techada y con
-                            iluminación LED de alta potencia.
+                        <p class="card-text">
+                            Ideal para partidos rápidos.
                         </p>
 
+                        <h3 class="text-success">
+                            $4.500
+                        </h3>
 
+                        <ul>
+                            <li>Césped sintético</li>
+                            <li>Iluminación LED</li>
+                            <li>Techada</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+                        <button class="btn btn-success w-100">
+                            Reservar
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-container col-lg-3 col-md-6">
+                <div class="card h-100">
+
+                    <img src="/assets/img/Cancha-2.webp" class="card-img-top" alt="Cancha Futbol 5">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Fútbol 5
+                        </h5>
+
+                        <p class="card-text">
+                            Ideal para partidos rápidos.
+                        </p>
+
+                        <h3 class="text-success">
+                            $4.500
+                        </h3>
+
+                        <ul>
+                            <li>Césped sintético</li>
+                            <li>Iluminación LED</li>
+                            <li>Techada</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+                        <button class="btn btn-success w-100">
+                            Reservar
+                        </button>
                     </div>
 
                 </div>
             </div>
 
-            <!-- Cancha de futbol 7 -->
-            <div class="col-md-6">
-                <div class="blog-card">
+            <div class="card-container col-lg-3 col-md-6">
+                <div class="card h-100">
 
-                    <img src="/assets/img/Cancha-2.webp" class="blog-img">
+                    <img src="/assets/img/Cancha-3.webp" class="card-img-top" alt="Cancha Futbol 5">
 
-                    <div class="blog-content">
-                        <h5 class="fw-bold">
-                            Cancha de futbol 7
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Fútbol 5
                         </h5>
 
-                        <small class="text-muted">Formato Semi-Profesional</small>
-
-                        <p>
-                            El equilibrio perfecto entre toque y desgaste físico. Ideal para torneos relámpago o
-                            partidos de fin de semana.
+                        <p class="card-text">
+                            Ideal para partidos rápidos.
                         </p>
 
+                        <h3 class="text-success">
+                            $4.500
+                        </h3>
 
+                        <ul>
+                            <li>Césped sintético</li>
+                            <li>Iluminación LED</li>
+                            <li>Techada</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+                        <button class="btn btn-success w-100">
+                            Reservar
+                        </button>
                     </div>
 
                 </div>
             </div>
 
-            <!-- Cancha de futbol 9 -->
-            <div class="col-md-6">
-                <div class="blog-card">
+            <div class="card-container col-lg-3 col-md-6">
+                <div class="card h-100">
 
-                    <img src="/assets/img/Cancha-3.webp" class="blog-img">
+                    <img src="/assets/img/Cancha-4.webp" class="card-img-top" alt="Cancha Futbol 5">
 
-                    <div class="blog-content">
-                        <h5 class="fw-bold">
-                            Cancha de futbol 9
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Fútbol 5
                         </h5>
 
-                        <small class="text-muted">Espacio Intermedio</small>
-
-                        <p>
-                            Espacio amplio para desplegar táctica y juego en equipo. Césped de última generación con
-                            excelente amortiguación.
+                        <p class="card-text">
+                            Ideal para partidos rápidos.
                         </p>
 
+                        <h3 class="text-success">
+                            $4.500
+                        </h3>
 
+                        <ul>
+                            <li>Césped sintético</li>
+                            <li>Iluminación LED</li>
+                            <li>Techada</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+                        <button class="btn btn-success w-100">
+                            Reservar
+                        </button>
                     </div>
 
                 </div>
             </div>
 
-            <!-- Cancha de futbol 10 -->
-            <div class="col-md-6">
-                <div class="blog-card">
 
-                    <img src="/assets/img/Cancha-4.webp" class="blog-img">
+            <!-- Repeat for Futbol 7 -->
+            <!-- Repeat for Futbol 9 -->
+            <!-- Repeat for Futbol 10 -->
 
-                    <div class="blog-content">
-                        <h5 class="fw-bold">
-                            Cancha de Futbol 10
-                        </h5>
+        </div>
+        ```
 
-                        <small class="text-muted">Césped Sintético</small>
+    </section>
 
-                        <p>
-                            Viví la experiencia del fútbol profesional. Ideal para planteles completos, entrenamientos
-                            tácticos y ligas competitivas.
-                        </p>
+    <!-- BENEFITS -->
+
+    <section class="bg-light py-5">
+
+        ```
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <h2>¿Por qué elegirnos?</h2>
+
+                    <div class="row mt-4">
+
+                        <div class="col-6 mb-4">
+                            <h5>Césped PRO</h5>
+                            <p>Tecnología certificada.</p>
+                        </div>
+
+                        <div class="col-6 mb-4">
+                            <h5>LED Profesional</h5>
+                            <p>Visibilidad perfecta.</p>
+                        </div>
+
+                        <div class="col-6">
+                            <h5>Vestuarios</h5>
+                            <p>Con duchas y lockers.</p>
+                        </div>
+
+                        <div class="col-6">
+                            <h5>Buffet</h5>
+                            <p>Snacks y bebidas.</p>
+                        </div>
+
                     </div>
 
                 </div>
+
+                <div class="col-lg-6">
+                    <img src="img/instalaciones.webp" class="img-fluid rounded shadow" alt="Instalaciones">
+                </div>
+
             </div>
 
         </div>
+        ```
 
     </section>
+
+    <!-- FAQ -->
+
+    <section class="container py-5">
+
+        ```
+        <div class="text-center mb-5">
+            <h2>Preguntas Frecuentes</h2>
+        </div>
+
+        <div class="accordion" id="faqAccordion">
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        ¿Se puede cancelar una reserva?
+                    </button>
+                </h2>
+
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+                        Hasta 24 horas antes sin costo.
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faq2">
+                        ¿Incluye balón?
+                    </button>
+                </h2>
+
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+                        Sí, incluye balón profesional.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        ```
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="bg-dark text-white py-4">
+
+        ```
+        <div class="container text-center">
+
+            <h5>Futbol 5</h5>
+
+            <p class="mb-0">
+                © 2024 Todos los derechos reservados.
+            </p>
+
+        </div>
+        ```
+
+    </footer>
+
+
     <!-- Stats Section -->
     <section class="stats-section py-5">
 
