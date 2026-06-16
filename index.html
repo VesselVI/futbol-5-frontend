@@ -35,9 +35,13 @@
                     <li class="nav-item"><a class="nav-link " href="#Canchas">Canchas</a></li>
 
                 </ul>
-
-                <a href="#" class="btn px-6 d-none d-lg-block rentBtn">Alquilar</a>
-
+                <div class="navBtnGroup d-flex align-items-center gap-3">
+                    <a href="/index.html#Appoint-Turn" class="btn px-6 d-none d-lg-block rentBtn">Sacar Turno</a>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch">
+                        <label class="form-check-label" for="switchCheckDefault">Night Mode</label>
+                    </div>
+                </div>
                 <!-- Burger Button (Mobile Only) -->
                 <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#mobileMenu">
@@ -96,7 +100,7 @@
                         y asegura tu cancha antes de que te la ganen.
                     </p>
 
-                    <div class="d-flex gap-3 mt-3">
+                    <div class="d-flex gap-3 mt-3" id="Appoint-Turn">
                         <a class="btn hero-btn px-4" href="#Canchas">Ver nuestras canchas</a>
                     </div>
 
@@ -426,7 +430,7 @@
                 </p>
             </div>
 
-            <a href="#" class="btn cta-btn">
+            <a href="index.html#Appoint-Turn" class="btn cta-btn">
                 Sacar turno
             </a>
 

@@ -4,7 +4,18 @@
     --attention: #2C5E43;
     --bodyText: #212529;
     --general: #F8F9FA;
+    --background: #dbdbdf;
+    --backgroundImage: url(https://images.pexels.com/photos/54567/pexels-photo-54567.jpeg)
+}
 
+[data-bs-theme="dark"] {
+    --primary: #26569d;
+    --buttons: #b0552d;
+    --attention: #17372d;
+    --bodyText: #a8aeb5;
+    --general: #eff2f5;
+    --background: #121417;
+    --backgroundImage: url(https://images.unsplash.com/photo-1612607696387-f139f76bdd6c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg)
 }
 
 html {
@@ -12,8 +23,20 @@ html {
 }
 
 body {
-    background: var(--general);
+    background: var(--background);
     font-family: "Outfit", sans-serif;
+}
+
+.container .rentBtn {
+    background: var(--attention);
+    color: var(--general);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: 0.3s;
+    text-shadow: none;
+
 }
 
 .btn {
@@ -82,7 +105,19 @@ body {
 
 .hero-modern {
     padding: 120px 0 90px;
-    background-image: url(https://images.pexels.com/photos/54567/pexels-photo-54567.jpeg);
+    background-image: var(--backgroundImage);
+    border-radius: 0 0 35px 35px;
+    color: #fff;
+    height: 80vh;
+    background-size: cover;
+
+}
+
+
+
+.hero-modern.night-mode {
+    padding: 120px 0 90px;
+    background-image: url(https://images.unsplash.com/photo-1612607696387-f139f76bdd6c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg);
     border-radius: 0 0 35px 35px;
     color: #fff;
     height: 80vh;

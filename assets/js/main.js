@@ -14,7 +14,7 @@ AOS.init({
   once: true,
 });
 
-// عداد الأرقام المتزايدة
+
 const counters = document.querySelectorAll(".counter");
 
 counters.forEach((counter) => {
@@ -34,7 +34,6 @@ counters.forEach((counter) => {
     }
   };
 
-  // تشغيل العد عند دخول العنصر للشاشة
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -45,4 +44,41 @@ counters.forEach((counter) => {
   });
 
   observer.observe(counter);
+});
+
+
+const themeSwitch =
+  document.getElementById("themeSwitch");
+
+// Load saved theme
+const savedTheme =
+  localStorage.getItem("theme") || "light";
+
+// Apply theme
+document.documentElement.setAttribute(
+  "data-bs-theme",
+  savedTheme
+);
+
+// Set switch state
+themeSwitch.checked =
+  savedTheme === "dark";
+
+// Listen for changes
+themeSwitch.addEventListener("change", () => {
+
+  const theme =
+    themeSwitch.checked
+      ? "dark"
+      : "light";
+
+  document.documentElement.setAttribute(
+    "data-bs-theme",
+    theme
+  );
+
+  localStorage.setItem(
+    "theme",
+    theme
+  );
 });
