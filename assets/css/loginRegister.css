@@ -1,0 +1,34 @@
+:root {
+    --primary: #1A365D;
+    --buttons: #e16c3e;
+    --attention: #2C5E43;
+    --bodyText: #212529;
+    --general: #F8F9FA;
+    --background: #2b1732fe;
+    --backgroundImage: url(https://images.pexels.com/photos/54567/pexels-photo-54567.jpeg)
+}
+
+.sectionBg {
+    background-color: var(--background);
+}
+
+.loginImg {
+    background-image: url(https://images.unsplash.com/photo-1618073193718-23a66109f4e6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp);
+    background-size: cover;
+    border-radius: 1rem;
+
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+}
+
+#submitBtn {
+    transition: 0.3s;
+
+}
+
+#submitBtn:hover {
+    transform: translateY(-3.5px);
+    background-color: var(--buttons);
+}
