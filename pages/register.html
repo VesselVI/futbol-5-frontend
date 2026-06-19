@@ -8,8 +8,8 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-    <script src="/assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/assets/js/register.js" defer></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
@@ -28,7 +28,7 @@
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-5  text-black">
 
-                                    <form>
+                                    <form id="registerForm">
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
 
@@ -53,6 +53,11 @@
                                         <div class="form-group col-md-6 mb-2 mt-1">
                                             <label for="inputPhone" class="mb-2">Telefono</label>
                                             <input type="tel" class="form-control" id="inputPhone" required>
+                                        </div>
+                                        <!-- dni -->
+                                        <div class="form-group col-md-6 mb-2 mt-1">
+                                            <label for="inputDni" class="mb-2">DNI</label>
+                                            <input type="text" class="form-control" id="inputDni" required>
                                         </div>
                                         <!-- password -->
                                         <div class="form-group col-md-6 mb-2 mt-1">
