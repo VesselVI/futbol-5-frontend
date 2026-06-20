@@ -6,6 +6,6 @@ export const registerUser = (userData) => {
 
 
 export const loginUser = (credetials) => {
-    return api.post("/login",
+    return api.post("/users/login",
         credetials);
 };
