@@ -13,7 +13,7 @@ async function handleSubmit(event) {
         user_phone: document.getElementById("inputPhone").value,
         user_password: document.getElementById("inputPassword").value,
         user_dni: document.getElementById("inputDni").value,
-        id_rental_statuses: 2,
+        id_rental_status: 2,
 
     }
     console.log(userData);

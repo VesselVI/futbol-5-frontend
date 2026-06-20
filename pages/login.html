@@ -9,11 +9,11 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/login.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/loginRegister.css">
     <title>Futbol 5 Login</title>
 </head>
 
@@ -30,36 +30,36 @@
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
 
-                                    <form>
+                                    <form id="loginForm">
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fas fa-cubes fa-2x me-3"></i>
                                             <span class="h1 fw-bold mb-0">Futbol 5</span>
                                         </div>
 
-                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
-                                            account</h5>
-
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="email" id="form2Example17"
-                                                class="form-control form-control-lg" />
-                                            <label class="form-label" for="form2Example17">Email address</label>
+                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicio de sesión
+                                        </h5>
+                                        <div class="form-floating mb-4">
+                                            <input type="email" class="form-control" id="emailInput"
+                                                placeholder="name@example.com">
+                                            <label for="emailInput">Dirección de email</label>
                                         </div>
-
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="password" id="form2Example27"
-                                                class="form-control form-control-lg" />
-                                            <label class="form-label" for="form2Example27">Password</label>
+                                        <div class="form-floating mb-4">
+                                            <input type="password" class="form-control" id="passwordInput"
+                                                placeholder="Password">
+                                            <label for="passwordInput">Contraseña</label>
                                         </div>
 
                                         <div class="pt-1 mb-4">
                                             <button data-mdb-button-init data-mdb-ripple-init
-                                                class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                                                class="btn btn-dark btn-lg btn-block" type="button">Iniciar
+                                                Sesión</button>
                                         </div>
 
-                                        <a class="small text-muted" href="#!">Forgot password?</a>
-                                        <p class="mb-5 pb-lg-2" ;">Don't have an account? <a href="#!" ;">Register
-                                                here</a></p>
+
+                                        <p class="mb-5 pb-lg-2" ;">No tenés cuenta?<a href="/pages/register.html"
+                                                ;">Registrarse</a>
+                                        </p>
                                         <a href="#!" class="small text-muted">Terms of use.</a>
                                         <a href="#!" class="small text-muted">Privacy policy</a>
                                     </form>
