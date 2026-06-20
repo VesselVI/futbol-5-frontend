@@ -1,4 +1,4 @@
-import { createUser } from "../../services/userService.js";
+import { loginUser, registerUser } from "../../services/userService.js";
 
 const form = document.getElementById("registerForm");
 
@@ -19,7 +19,7 @@ async function handleSubmit(event) {
     console.log(userData);
     try {
 
-        const response = await createUser(userData);
+        const response = await registerUser(userData);
         console.log(response);
         alert("usuario registrado!");
     } catch (error) {
