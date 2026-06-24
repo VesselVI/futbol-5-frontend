@@ -9,7 +9,3 @@ export const loginUser = (credetials) => {
     return api.post("/users/login",
         credetials);
 };
-
-const response = await api.get('/users/me');
-
-console.log(response.data);
