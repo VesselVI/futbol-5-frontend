@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -9,7 +9,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css_templates/style.css">
   <link rel="stylesheet" href="/assets/css/dashboard.css">
@@ -20,29 +19,29 @@
   <div class="admin-shell">
     <div class="sidebar-backdrop" data-sidebar-close></div>
 
-    <aside class="admin-sidebar" id="adminSidebar" aria-label="Main navigation">
+    <aside class="admin-sidebar" id="adminSidebar" aria-label="Navegación principal">
       <div class="sidebar-header">
-        <a class="brand-mark" href="index.html" aria-label="adminHMD dashboard">
+        <a class="brand-mark" href="index.html" aria-label="Panel de adminHMD">
           <span class="brand-icon"><i class="bi bi-grid-1x2-fill" aria-hidden="true"></i></span>
           <span class="brand-copy">
-            <span class="brand-title">Panel de administración</span>
-            <span class="brand-subtitle">Nombre del admin</span>
+            <span class="brand-title">adminHMD</span>
+            <span class="brand-subtitle">Plantilla de Administración</span>
           </span>
         </a>
       </div>
 
       <nav class="sidebar-nav">
-        <a class="nav-link active" href="/templates/index-dashboard.html" aria-current="page">
+        <a class="nav-link" href="index.html">
           <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
-          <span class="nav-text">Dashboard</span>
+          <span class="nav-text">Panel</span>
         </a>
-        <a class="nav-link" href="/templates/users.html">
+        <a class="nav-link active" href="users.html" aria-current="page">
           <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
           <span class="nav-text">Usuarios</span>
         </a>
         <a class="nav-link" href="add-user.html">
           <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
-          <span class="nav-text">Agregar usuario</span>
+          <span class="nav-text">Agregar Usuario</span>
         </a>
         <a class="nav-link" href="profile.html">
           <span class="nav-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
@@ -50,7 +49,7 @@
         </a>
         <a class="nav-link" href="charts.html">
           <span class="nav-icon"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>
-          <span class="nav-text">Estadisticas</span>
+          <span class="nav-text">Gráficos</span>
         </a>
         <a class="nav-link" href="tables.html">
           <span class="nav-icon"><i class="bi bi-table" aria-hidden="true"></i></span>
@@ -58,19 +57,19 @@
         </a>
         <a class="nav-link" href="forms.html">
           <span class="nav-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
-          <span class="nav-text">/Formularios</span>
+          <span class="nav-text">Formularios</span>
         </a>
         <a class="nav-link" href="components.html">
           <span class="nav-icon"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i></span>
-          <span class="nav-text">/Componentes</span>
+          <span class="nav-text">Componentes</span>
         </a>
         <a class="nav-link" href="alerts.html">
           <span class="nav-icon"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i></span>
-          <span class="nav-text">/Alertas</span>
+          <span class="nav-text">Alertas</span>
         </a>
         <a class="nav-link" href="modals.html">
           <span class="nav-icon"><i class="bi bi-window-stack" aria-hidden="true"></i></span>
-          <span class="nav-text">/Modales</span>
+          <span class="nav-text">Modales</span>
         </a>
         <a class="nav-link" href="settings.html">
           <span class="nav-icon"><i class="bi bi-gear" aria-hidden="true"></i></span>
@@ -78,63 +77,62 @@
         </a>
         <a class="nav-link" href="blank.html">
           <span class="nav-icon"><i class="bi bi-file-earmark" aria-hidden="true"></i></span>
-          <span class="nav-text">Página en blanco</span>
+          <span class="nav-text">Página en Blanco</span>
         </a>
       </nav>
 
       <div class="sidebar-user">
-        <img class="avatar-img avatar-md sidebar-user-avatar" src="../assets/images/avatar/avatar.jpg" alt="Admin User">
-        <strong>Usuario Admin</strong>
-        <small>Espacio de trabajo activo</small>
+        <img class="avatar-img avatar-md sidebar-user-avatar" src="../assets/images/avatar/avatar.jpg"
+          alt="Admin Hasan">
+        <strong>Admin Hasan</strong>
+        <small>Espacio de Trabajo Activo</small>
       </div>
 
-      <!-- <div class="sidebar-footer">
+      <div class="sidebar-footer">
         <span class="status-dot"></span>
-        <span class="sidebar-footer-text">Sistema funcionando correctamente</span>
-      </div> -->
+        <span class="sidebar-footer-text">El sistema funciona correctamente</span>
+      </div>
     </aside>
 
     <div class="admin-main">
       <nav class="navbar admin-navbar navbar-expand bg-white">
         <div class="container-fluid px-3 px-lg-4">
           <button class="sidebar-toggle" type="button" data-sidebar-toggle aria-controls="adminSidebar"
-            aria-expanded="true" aria-label="Toggle sidebar">
+            aria-expanded="true" aria-label="Alternar barra lateral">
             <span></span>
             <span></span>
             <span></span>
           </button>
 
           <form class="d-none d-md-flex ms-3 flex-grow-1" role="search">
-            <input class="form-control search-input" type="search" placeholder="**barra de busqueda opcional**"
+            <input class="form-control search-input" type="search" placeholder="Buscar usuarios, roles, equipos"
               aria-label="Buscar">
           </form>
 
           <div class="navbar-actions ms-auto">
-            <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"
-              title="Switch color theme">
+            <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Cambiar tema de color"
+              title="Cambiar tema de color">
               <i class="bi bi-moon-stars" data-theme-icon aria-hidden="true"></i>
             </button>
             <div class="dropdown">
               <button class="icon-button" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                aria-label="Notifications">
+                aria-label="Notificaciones">
                 <span class="notification-dot"></span>
                 <i class="bi bi-bell" aria-hidden="true"></i>
               </button>
-
-              <!-- barra de notificaciones opcional -->
               <div class="dropdown-menu dropdown-menu-end notification-menu">
-                <div class="dropdown-header fw-bold text-body">**Notificiones opcionales**</div>
+                <div class="dropdown-header fw-bold text-body">Notificaciones</div>
                 <a class="dropdown-item" href="users.html">
                   <span class="notification-title">Nuevo usuario registrado</span>
-                  <span class="notification-time">hace 4 minutos</span>
+                  <span class="notification-time">Hace 4 minutos</span>
                 </a>
                 <a class="dropdown-item" href="charts.html">
                   <span class="notification-title">Objetivo de ingresos alcanzado</span>
-                  <span class="notification-time">hace 32 minutos</span>
+                  <span class="notification-time">Hace 32 minutos</span>
                 </a>
                 <a class="dropdown-item" href="settings.html">
                   <span class="notification-title">Revisión de seguridad completada</span>
-                  <span class="notification-time">hace 1 hora</span>
+                  <span class="notification-time">Hace 1 hora</span>
                 </a>
               </div>
             </div>
@@ -142,12 +140,12 @@
             <div class="dropdown">
               <button class="profile-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <img class="avatar-img avatar-sm" src="../assets/images/avatar/avatar.jpg" alt="Usuario Admin">
-                <span class="profile-name d-none d-sm-inline">Usuario admin</span>
+                <img class="avatar-img avatar-sm" src="../assets/images/avatar/avatar.jpg" alt="Admin Hasan">
+                <span class="profile-name d-none d-sm-inline">Admin Hasan</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="profile.html">Perfil</a></li>
-                <li><a class="dropdown-item" href="settings.html">Configuración de cuenta</a></li>
+                <li><a class="dropdown-item" href="settings.html">Configuración de la cuenta</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
@@ -162,30 +160,29 @@
         <div class="container-fluid px-3 px-lg-4 py-4">
           <div class="page-heading">
             <div class="page-heading-copy">
-              <span class="page-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
+              <span class="page-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
               <div>
-                <p class="eyebrow mb-1">Resumen</p>
-                <h1 class="h3 mb-1">Dashboard</h1>
-                <p class="text-muted mb-0">Monitorea performance, alquileres, usuarios y soporte desde un solo lugar.
-                </p>
+                <p class="eyebrow mb-1">Gestión</p>
+                <h1 class="h3 mb-1">Usuarios</h1>
+                <p class="text-muted mb-0">Revisa cuentas, roles, estado de cuenta y propiedad de equipos.</p>
               </div>
             </div>
-            <div class="heading-actions"><button class="btn btn-outline-secondary btn-sm" type="button"><i
-                  class="bi bi-download" aria-hidden="true"></i> Exportar</button><button class="btn btn-primary btn-sm"
-                type="button"><i class="bi bi-file-earmark-plus" aria-hidden="true"></i> Crear informe</button></div>
+            <div class="heading-actions"><a class="btn btn-outline-secondary btn-sm" href="tables.html"><i
+                  class="bi bi-download" aria-hidden="true"></i> Exportar</a><a class="btn btn-primary btn-sm"
+                href="add-user.html"><i class="bi bi-person-plus" aria-hidden="true"></i> Agregar Usuario</a></div>
           </div>
 
-          <section class="row g-3 mt-1" aria-label="Dashboard metrics">
+          <section class="row g-3 mt-1" aria-label="Resumen de usuarios">
             <div class="col-12 col-sm-6 col-xl-3">
               <article class="metric-card metric-primary">
                 <div class="metric-top">
-                  <span class="metric-label">Ganancias</span>
-                  <span class="metric-icon"><i class="bi bi-currency-dollar" aria-hidden="true"></i></span>
+                  <span class="metric-label">Usuarios Totales</span>
+                  <span class="metric-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
                 </div>
-                <div class="metric-value">$48,240</div>
+                <div class="metric-value">8,742</div>
                 <div class="metric-meta">
-                  <span class="text-success">+12.5%</span>
-                  <span>del mes pasado</span>
+                  <span class="text-success">+5.1%</span>
+                  <span>este mes</span>
                 </div>
               </article>
             </div>
@@ -193,13 +190,13 @@
             <div class="col-12 col-sm-6 col-xl-3">
               <article class="metric-card metric-success">
                 <div class="metric-top">
-                  <span class="metric-label">Alquileres</span>
-                  <span class="metric-icon"><i class="bi bi-bag-check" aria-hidden="true"></i></span>
+                  <span class="metric-label">Activos</span>
+                  <span class="metric-icon"><i class="bi bi-check2-circle" aria-hidden="true"></i></span>
                 </div>
-                <div class="metric-value">1,284</div>
+                <div class="metric-value">7,980</div>
                 <div class="metric-meta">
-                  <span class="text-success">+8.2%</span>
-                  <span>nuevos pedidos</span>
+                  <span class="text-success">91%</span>
+                  <span>cuentas saludables</span>
                 </div>
               </article>
             </div>
@@ -207,13 +204,13 @@
             <div class="col-12 col-sm-6 col-xl-3">
               <article class="metric-card metric-warning">
                 <div class="metric-top">
-                  <span class="metric-label">Clientes</span>
-                  <span class="metric-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                  <span class="metric-label">Pendientes</span>
+                  <span class="metric-icon"><i class="bi bi-hourglass-split" aria-hidden="true"></i></span>
                 </div>
-                <div class="metric-value">(cantidad de clientes)</div>
+                <div class="metric-value">184</div>
                 <div class="metric-meta">
-                  <span class="text-success">+5.1%</span>
-                  <span>usuarios activos</span>
+                  <span class="text-warning">12</span>
+                  <span>requieren aprobación</span>
                 </div>
               </article>
             </div>
@@ -221,93 +218,41 @@
             <div class="col-12 col-sm-6 col-xl-3">
               <article class="metric-card metric-danger">
                 <div class="metric-top">
-                  <span class="metric-label">Tickets(opcional)</span>
-                  <span class="metric-icon"><i class="bi bi-life-preserver" aria-hidden="true"></i></span>
+                  <span class="metric-label">Suspendidos</span>
+                  <span class="metric-icon"><i class="bi bi-slash-circle" aria-hidden="true"></i></span>
                 </div>
-                <div class="metric-value">36</div>
+                <div class="metric-value">38</div>
                 <div class="metric-meta">
-                  <span class="text-danger">3 urgentes</span>
-                  <span>necesitan revisión</span>
+                  <span class="text-danger">4</span>
+                  <span>marcados hoy</span>
                 </div>
               </article>
-            </div>
-          </section>
-
-          <section class="row g-3 mt-1">
-            <div class="col-12 col-xl-8">
-              <div class="panel">
-                <div class="panel-header">
-                  <div>
-                    <h2 class="h5 mb-1 section-title"><i class="bi bi-graph-up-arrow"
-                        aria-hidden="true"></i><span>Estadisticas de ganancias</span></h2>
-                    <p class="text-muted mb-0">Ganancias mensuales comparadas con costo operacional.</p>
-                  </div>
-                  <a class="btn btn-light btn-sm" href="charts.html">Ver Detalles</a>
-                </div>
-
-                <div class="chart-bars" aria-label="Sales performance chart">
-                  <div class="chart-column bar-42"><span></span><small>Jan</small></div>
-                  <div class="chart-column bar-58"><span></span><small>Feb</small></div>
-                  <div class="chart-column bar-51"><span></span><small>Mar</small></div>
-                  <div class="chart-column bar-72"><span></span><small>Apr</small></div>
-                  <div class="chart-column bar-66"><span></span><small>May</small></div>
-                  <div class="chart-column bar-83"><span></span><small>Jun</small></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-xl-4">
-              <div class="panel h-100">
-                <div class="panel-header">
-                  <div>
-                    <h2 class="h5 mb-1 section-title"><i class="bi bi-activity" aria-hidden="true"></i><span>Actividad
-                        del equipo</span></h2>
-                    <p class="text-muted mb-0">Actualizaciones operacionales recientes.</p>
-                  </div>
-                </div>
-
-                <div class="activity-list">
-                  <div class="activity-item"><span class="activity-dot bg-primary"></span>
-                    <div>
-                      <p class="mb-1 fw-semibold">Nueva campaña lanzada</p>
-                      <p class="text-muted small mb-0">El equipo de marketing publicó la oferta de mayo.</p>
-                    </div>
-                  </div>
-                  <div class="activity-item"><span class="activity-dot bg-success"></span>
-                    <div>
-                      <p class="mb-1 fw-semibold">Lote de pagos procesado</p>
-                      <p class="text-muted small mb-0">246 facturas fueron procesadas exitosamente.</p>
-                    </div>
-                  </div>
-                  <div class="activity-item"><span class="activity-dot bg-warning"></span>
-                    <div>
-                      <p class="mb-1 fw-semibold">Cola de soporte en aumento</p>
-                      <p class="text-muted small mb-0">El tiempo promedio de primera respuesta es de 18 minutos.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
 
           <section class="panel mt-3">
             <div class="panel-header">
               <div>
-                <h2 class="h5 mb-1 section-title"><i class="bi bi-people" aria-hidden="true"></i><span>Usuarios
-                    recientes</span></h2>
-                <p class="text-muted mb-0">Actividad reciente de cuentas en el espacio de trabajo.</p>
+                <h2 class="h5 mb-1 section-title"><i class="bi bi-table" aria-hidden="true"></i><span>Lista de
+                    Usuarios</span></h2>
+                <p class="text-muted mb-0">Busca, revisa y gestiona las cuentas de los miembros del equipo.</p>
               </div>
-              <a class="btn btn-outline-secondary btn-sm" href="users.html">Gestionar usuarios</a>
+              <div class="d-flex flex-wrap gap-2">
+                <input class="form-control form-control-sm table-search" type="search" placeholder="Buscar usuarios"
+                  data-table-search="usersTable" aria-label="Buscar usuarios">
+                <a class="btn btn-primary btn-sm" href="add-user.html"><i class="bi bi-person-plus"
+                    aria-hidden="true"></i> Agregar Usuario</a>
+              </div>
             </div>
             <div class="table-responsive">
-              <table class="table align-middle mb-0">
+              <table class="table align-middle mb-0" id="usersTable" data-searchable-table>
                 <thead>
                   <tr>
                     <th scope="col">Usuario</th>
                     <th scope="col">Rol</th>
                     <th scope="col">Equipo</th>
                     <th scope="col">Estado</th>
-                    <th scope="col">Ingresó</th>
+                    <th scope="col">Fecha de Ingreso</th>
                     <th scope="col" class="text-end">Acción</th>
                   </tr>
                 </thead>
@@ -370,7 +315,7 @@
                         </div>
                       </div>
                     </td>
-                    <td>Visualizador</td>
+                    <td>Espectador</td>
                     <td>Finanzas</td>
                     <td><span class="badge text-bg-secondary">Suspendido</span></td>
                     <td>07 abr, 2026</td>
@@ -395,6 +340,17 @@
                 </tbody>
               </table>
             </div>
+            <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 mt-3">
+              <p class="text-muted small mb-0">Mostrando 1 a 5 de 124 usuarios</p>
+              <nav aria-label="Paginación de usuarios">
+                <ul class="pagination pagination-sm mb-0">
+                  <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                </ul>
+              </nav>
+            </div>
           </section>
         </div>
       </main>
@@ -405,12 +361,14 @@
               href="https://github.com/HasanMahmudDev">Md. Hasan Mahmud</a> • Distribuido por <a target="_blank"
               class="fw-bold text-success" href="https://themewagon.com">ThemeWagon</a> </span>
           <span>Plantilla profesional de panel de administración.</span>
+          <span>Panel de gestión de usuarios.</span>
         </div>
       </footer>
     </div>
   </div>
 
-
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 
 </html>
