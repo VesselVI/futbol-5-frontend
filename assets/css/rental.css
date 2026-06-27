@@ -308,6 +308,121 @@ body {
     border: 1px solid #eef1ff;
 }
 
+
+
+.booking-section {
+    --field-radius: 1rem;
+}
+
+
+.section-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--bs-primary, #2e7d32);
+}
+
+
+.field-carousel .carousel-img {
+    height: 420px;
+    object-fit: cover;
+}
+
+@media (max-width: 991.98px) {
+    .field-carousel .carousel-img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .field-carousel .carousel-img {
+        height: 220px;
+    }
+}
+
+.field-carousel .carousel-caption {
+    text-align: left;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    right: auto;
+    background: rgba(0, 0, 0, .45);
+    backdrop-filter: blur(4px);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    width: fit-content;
+}
+
+.field-carousel .carousel-indicators [data-bs-target] {
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.field-carousel .carousel-indicators .active {
+    background-color: #fff;
+}
+
+
+.booking-section {
+    --field-radius: 1rem;
+}
+
+
+.section-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--bs-primary, #2e7d32);
+}
+
+.field-carousel .carousel-img {
+    height: 420px;
+    object-fit: cover;
+}
+
+@media (max-width: 991.98px) {
+    .field-carousel .carousel-img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .field-carousel .carousel-img {
+        height: 220px;
+    }
+}
+
+.field-carousel .carousel-caption {
+    text-align: left;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    right: auto;
+    background: rgba(0, 0, 0, .45);
+    backdrop-filter: blur(4px);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    width: fit-content;
+}
+
+
+.booking-form {
+    background-color: var(--general);
+    border: 1px solid var(--bs-border-color, #e0e0e0);
+}
+
+[data-bs-theme="dark"] .booking-form {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+[data-bs-theme="dark"] .field-carousel .carousel-caption {
+    background: rgba(0, 0, 0, .65);
+}
+
+.booking-form .rentBtn {
+    white-space: nowrap;
+}
+
 .cta-box {
     background: linear-gradient(135deg, #5d8268, var(--primary));
     padding: 28px 35px;
