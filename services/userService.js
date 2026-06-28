@@ -9,3 +9,4 @@ export const loginUser = (credetials) => {
     return api.post("/users/login",
         credetials);
 };
+

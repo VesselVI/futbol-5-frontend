@@ -1,3 +1,5 @@
+
+
 window.addEventListener("scroll", function () {
   const nav = document.querySelector(".main-nav");
 
@@ -50,21 +52,20 @@ counters.forEach((counter) => {
 const themeSwitch =
   document.getElementById("themeSwitch");
 
-// Load saved theme
+
 const savedTheme =
   localStorage.getItem("theme") || "light";
 
-// Apply theme
+
 document.documentElement.setAttribute(
   "data-bs-theme",
   savedTheme
 );
 
-// Set switch state
+
 themeSwitch.checked =
   savedTheme === "dark";
 
-// Listen for changes
 themeSwitch.addEventListener("change", () => {
 
   const theme =
@@ -82,3 +83,6 @@ themeSwitch.addEventListener("change", () => {
     theme
   );
 });
+
+
+
