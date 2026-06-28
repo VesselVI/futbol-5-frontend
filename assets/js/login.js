@@ -17,7 +17,7 @@ async function handleLogin(event) {
         const response = await loginUser(credentials);
         console.log(response);
         alert("login exitoso");
-        window.location.replace("../../index.html")
+        window.location.replace("../../indexAuth.html")
     } catch (error) {
         console.log(error)
         alert("error en el inicio de sesión")
