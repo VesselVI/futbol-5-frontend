@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.getElementById('table-body-rentals');
-  // Apuntamos al endpoint de reservas
+  const btnLogout = document.getElementById('btn-logout');
   const API_URL = `http://127.0.0.1:8000/api/rental`;
 
   const fetchRentals = async () => {
@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Función para dar formato a la moneda (Ej: $ 15.000,00)
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('es-AR', {
       style: 'currency',
@@ -31,15 +30,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }).format(amount);
   };
 
-  // Función para formatear la fecha (de AAAA-MM-DD a DD/MM/AAAA)
+  const totalHours = (rental_start, rental_end) => {
+    if (!rental_start || !rental_end) return 0;
+
+    const [startHour, startMin] = rental_start.split(':').map(Number);
+    const [endHour, endMin] = rental_end.split(':').map(Number);
+    const startDecimal = startHour + startMin / 60;
+    let endDecimal = endHour + endMin / 60;
+
+    if (endDecimal < startDecimal) {
+      endDecimal += 24;
+    }
+
+    return endDecimal - startDecimal;
+  };
+
   const formatDate = (dateString) => {
-    // Cortamos el string en la 'T' si existe y rearmamos
     const datePart = dateString.split('T')[0];
     const [year, month, day] = datePart.split('-');
     return `${day}/${month}/${year}`;
   };
 
-  // Función para formatear hora (de "18:00:00" a "18:00")
   const formatTime = (timeString) => {
     return timeString.substring(0, 5);
   };
@@ -54,13 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     rentals.forEach((rental) => {
       const tr = document.createElement('tr');
-
-      // Creamos un string para la Cancha (Ej: Fútbol 5 - Av. Principal 123)
       const fieldInfo = `${rental.category_name} <br><small class="text-muted">${rental.facility_address}</small>`;
-
-      // Creamos un string para el Horario (Ej: 18:00 a 19:00)
       const schedule = `${formatTime(rental.rental_start)} - ${formatTime(rental.rental_end)}`;
-
       tr.innerHTML = `
                 <td><span class="badge bg-secondary">#${rental.id_rental}</span></td>
                 <td class="fw-medium">${formatDate(rental.rental_date)}</td>
@@ -70,11 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${rental.user_name} <br>
                     <small class="text-muted"><i class="bi bi-telephone-fill"></i> ${rental.user_phone}</small>
                 </td>
-                <td class="fw-bold text-success">${formatCurrency(rental.rental_price)}</td>
+                <td class="fw-bold text-success">${formatCurrency(totalHours(rental.rental_start, rental.rental_end) * rental.rental_price)}</td>
                 <td class="text-center">
                     <div class="btn-group shadow-sm">
-                        <!-- El botón Editar redirige pasando el ID por la URL -->
-                        <a href="editar-reserva.html?id=${rental.id_rental}" class="btn btn-sm btn-outline-primary" title="Editar">
+                        <a href="rental-update.html?id=${rental.id_rental}" class="btn btn-sm btn-outline-primary" title="Editar">
                             <i class="bi bi-pencil-square"></i>
                         </a>
                         <button type="button" class="btn btn-sm btn-outline-danger btn-delete" data-id="${rental.id_rental}" title="Eliminar">
@@ -87,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Delegación de eventos para eliminar
   tableBody.addEventListener('click', async (e) => {
     const btnDelete = e.target.closest('.btn-delete');
 
@@ -120,4 +124,27 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   fetchRentals();
+
+  if (btnLogout) {
+    btnLogout.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const API_LOGOUT = 'http://127.0.0.1:8000/api/users/logout';
+
+      try {
+        await axios.post(
+          API_LOGOUT,
+          {},
+          {
+            withCredentials: true,
+          },
+        );
+
+        window.location.href = '/';
+      } catch (error) {
+        console.error('Error al cerrar sesión:', error);
+        alert('Ocurrió un problema al cerrar la sesión. Intenta nuevamente.');
+      }
+    });
+  }
 });

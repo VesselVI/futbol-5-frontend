@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const form = document.getElementById('form-edit-user');
   const errorMessage = document.getElementById('error-message');
   const btnSubmit = document.getElementById('btn-submit');
-
-  const hostname = window.location.hostname;
+  const btnLogout = document.getElementById('btn-logout');
   const API_URL = `http://127.0.0.1:8000/api/users`;
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -78,4 +77,27 @@ document.addEventListener('DOMContentLoaded', async () => {
       btnSubmit.innerHTML = 'Actualizar Cambios';
     }
   });
+
+  if (btnLogout) {
+    btnLogout.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const API_LOGOUT = 'http://127.0.0.1:8000/api/users/logout';
+
+      try {
+        await axios.post(
+          API_LOGOUT,
+          {},
+          {
+            withCredentials: true,
+          },
+        );
+
+        window.location.href = '/';
+      } catch (error) {
+        console.error('Error al cerrar sesión:', error);
+        alert('Ocurrió un problema al cerrar la sesión. Intenta nuevamente.');
+      }
+    });
+  }
 });

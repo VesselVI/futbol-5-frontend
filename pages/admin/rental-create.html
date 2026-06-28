@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sistema Fútbol 5 - Nuevo Empleado</title>
+    <title>Sistema Fútbol 5 - Nueva Reserva</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,11 +13,10 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
     <script src="../../assets/js/authGuard.js" defer></script>
-    <script src="../../assets/js/createEmployee.js" defer></script>
+    <script src="../../assets/js/createRental.js" defer></script>
   </head>
   <body class="bg-light">
     <div class="d-flex" style="min-height: 100vh">
-      <!-- ================= SIDEBAR ================= -->
       <div
         class="d-flex flex-column flex-shrink-0 p-3 bg-white border-end shadow-sm"
         style="width: 280px"
@@ -35,42 +34,37 @@
             Sistema
           </li>
           <li>
-            <a href="users.html" class="nav-link link-dark">
-              <i class="bi bi-people me-2"></i>
-              Usuarios
-            </a>
+            <a href="users.html" class="nav-link link-dark"
+              ><i class="bi bi-people me-2"></i> Usuarios</a
+            >
           </li>
           <li>
-            <a
-              href="employees.html"
-              class="nav-link active bg-primary text-white"
+            <a href="employees.html" class="nav-link link-dark"
+              ><i class="bi bi-person-badge me-2"></i> Empleados</a
             >
-              <i class="bi bi-person-badge me-2"></i>
-              Empleados
-            </a>
           </li>
           <li class="mt-4 mb-1 text-muted small fw-bold text-uppercase px-3">
             Instalaciones
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
-              <i class="bi bi-building me-2"></i>
-              Sedes
-            </a>
+            <a href="#" class="nav-link link-dark"
+              ><i class="bi bi-building me-2"></i> Sedes</a
+            >
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
-              <i class="bi bi-grid me-2"></i>
-              Canchas
-            </a>
+            <a href="#" class="nav-link link-dark"
+              ><i class="bi bi-grid me-2"></i> Canchas</a
+            >
           </li>
           <li class="mt-4 mb-1 text-muted small fw-bold text-uppercase px-3">
             Operaciones
           </li>
           <li>
-            <a href="rentals.html" class="nav-link link-dark">
-              <i class="bi bi-calendar-check me-2"></i>
-              Reservas
+            <a
+              href="rentals.html"
+              class="nav-link active bg-primary text-white"
+            >
+              <i class="bi bi-calendar-check me-2"></i> Reservas
             </a>
           </li>
         </ul>
@@ -97,94 +91,110 @@
           </ul>
         </div>
       </div>
-
-      <!-- ================= CONTENIDO PRINCIPAL ================= -->
       <div class="p-4 w-100">
         <div class="d-flex justify-content-between align-items-center mb-4">
-          <h2 class="m-0">Registrar Nuevo Empleado</h2>
+          <h2 class="m-0">Registrar Nueva Reserva</h2>
           <a
-            href="employees.html"
+            href="rentals.html"
             class="btn btn-outline-secondary d-flex align-items-center gap-2"
           >
             <i class="bi bi-arrow-left"></i> Volver a la lista
           </a>
         </div>
-
         <div
           class="card border-0 shadow-sm rounded-3 mx-auto"
           style="max-width: 800px"
         >
           <div class="card-body p-4 p-md-5">
-            <form id="form-create-employee">
+            <form id="form-create-rental">
               <h5 class="mb-4 text-primary border-bottom pb-2">
-                Datos Personales
+                Información del Cliente y Cancha
               </h5>
               <div class="row mb-4">
-                <div class="col-12 mb-3">
-                  <label for="inputName" class="form-label fw-medium"
-                    >Nombre Completo <span class="text-danger">*</span></label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="inputName"
-                    placeholder="Ej: Carlos López"
-                    required
-                  />
-                </div>
                 <div class="col-md-6 mb-3 mb-md-0">
-                  <label for="inputDni" class="form-label fw-medium"
-                    >DNI <span class="text-danger">*</span></label
+                  <label for="selectUser" class="form-label fw-medium"
+                    >Cliente (Usuario) <span class="text-danger">*</span></label
                   >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="inputDni"
-                    placeholder="Sin puntos ni espacios"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label for="inputPhone" class="form-label fw-medium"
-                    >Teléfono <span class="text-danger">*</span></label
-                  >
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="inputPhone"
-                    placeholder="Ej: 3811234567"
-                    required
-                  />
-                </div>
-              </div>
-
-              <h5 class="mb-4 text-primary border-bottom pb-2">
-                Datos Laborales
-              </h5>
-              <div class="row mb-3">
-                <div class="col-md-6 mb-3 mb-md-0">
-                  <label for="selectFacility" class="form-label fw-medium"
-                    >Sede Asignada <span class="text-danger">*</span></label
-                  >
-                  <select class="form-select" id="selectFacility" required>
+                  <select class="form-select" id="selectUser" required>
                     <option value="" selected disabled>
-                      Cargando sedes...
+                      Cargando clientes...
                     </option>
                   </select>
                 </div>
                 <div class="col-md-6">
-                  <label for="selectStatus" class="form-label fw-medium"
-                    >Estado Laboral <span class="text-danger">*</span></label
+                  <label for="selectField" class="form-label fw-medium"
+                    >Cancha <span class="text-danger">*</span></label
                   >
-                  <select class="form-select" id="selectStatus" required>
-                    <!-- Esto también podrías hacerlo dinámico, por ahora lo dejamos fijo según tu DB -->
-                    <option value="1" selected>Activo</option>
-                    <option value="2">Inactivo</option>
-                    <option value="3">De Vacaciones</option>
+                  <select class="form-select" id="selectField" required>
+                    <option value="" selected disabled>
+                      Cargando canchas...
+                    </option>
                   </select>
                 </div>
               </div>
 
+              <h5 class="mb-4 text-primary border-bottom pb-2">
+                Detalles del Alquiler
+              </h5>
+              <div class="row mb-3">
+                <div class="col-md-4 mb-3">
+                  <label for="inputDate" class="form-label fw-medium"
+                    >Fecha <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="inputDate"
+                    required
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="inputStartTime" class="form-label fw-medium"
+                    >Hora Inicio <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="time"
+                    class="form-control"
+                    id="inputStartTime"
+                    required
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="inputEndTime" class="form-label fw-medium"
+                    >Hora Fin <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="time"
+                    class="form-control"
+                    id="inputEndTime"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="inputPrice" class="form-label fw-medium"
+                    >Precio Acordado ($)
+                    <span class="text-danger">*</span></label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input
+                      type="number"
+                      step="0.01"
+                      class="form-control"
+                      id="inputPrice"
+                      placeholder="Ej: 15000.00"
+                      required
+                    />
+                  </div>
+                  <small class="text-muted"
+                    >El precio por defecto de la cancha se cargará
+                    automáticamente al seleccionarla.</small
+                  >
+                </div>
+              </div>
               <div
                 id="error-message"
                 class="alert alert-danger d-none mt-3"
@@ -194,13 +204,13 @@
               <div
                 class="d-flex justify-content-end gap-2 mt-4 pt-3 border-top"
               >
-                <a href="employees.html" class="btn btn-light">Cancelar</a>
+                <a href="rentals.html" class="btn btn-light">Cancelar</a>
                 <button
                   type="submit"
                   class="btn btn-primary px-4"
                   id="btn-submit"
                 >
-                  Guardar Empleado
+                  Guardar Reserva
                 </button>
               </div>
             </form>

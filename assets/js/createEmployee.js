@@ -3,12 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const errorMessage = document.getElementById('error-message');
   const btnSubmit = document.getElementById('btn-submit');
   const selectFacility = document.getElementById('selectFacility');
-
-  const hostname = window.location.hostname;
+  const btnLogout = document.getElementById('btn-logout');
   const API_EMPLOYEES_URL = `http://127.0.0.1:8000/api/employees`;
   const API_FACILITIES_URL = `http://127.0.0.1:8000/api/facilities`;
 
-  // 1. Función para cargar sedes dinámicamente
   const loadFacilities = async () => {
     try {
       const response = await axios.get(API_FACILITIES_URL, {
@@ -17,15 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const facilities = response.data;
 
-      // Limpiamos el texto de "Cargando..."
       selectFacility.innerHTML =
         '<option value="" selected disabled>Seleccione una sede</option>';
 
-      // Agregamos cada sede como un nuevo <option>
       facilities.forEach((facility) => {
         const option = document.createElement('option');
         option.value = facility.id;
-        // Asumimos que tu controlador devuelve un campo 'address'
         option.textContent = facility.address;
         selectFacility.appendChild(option);
       });
@@ -36,15 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // 2. Disparamos la carga al entrar a la página
   loadFacilities();
 
-  // 3. Manejo del formulario
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     errorMessage.classList.add('d-none');
 
-    // Validamos que el administrador no haya dejado la opción por defecto ("Seleccione una sede")
     if (!selectFacility.value) {
       errorMessage.textContent =
         'Por favor, seleccione una sede asignada para el empleado.';
@@ -87,4 +79,27 @@ document.addEventListener('DOMContentLoaded', () => {
       btnSubmit.innerHTML = 'Guardar Empleado';
     }
   });
+
+  if (btnLogout) {
+    btnLogout.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const API_LOGOUT = 'http://127.0.0.1:8000/api/users/logout';
+
+      try {
+        await axios.post(
+          API_LOGOUT,
+          {},
+          {
+            withCredentials: true,
+          },
+        );
+
+        window.location.href = '/';
+      } catch (error) {
+        console.error('Error al cerrar sesión:', error);
+        alert('Ocurrió un problema al cerrar la sesión. Intenta nuevamente.');
+      }
+    });
+  }
 });

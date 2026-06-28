@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.getElementById('table-body-users');
+  const btnLogout = document.getElementById('btn-logout');
   const API_URL = 'http://127.0.0.1:8000/api/users';
 
   const getUsers = async () => {
@@ -90,6 +91,29 @@ document.addEventListener('DOMContentLoaded', () => {
       alert(`Error: ${errorMessage}`);
     }
   };
+
+  if (btnLogout) {
+    btnLogout.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const API_LOGOUT = 'http://127.0.0.1:8000/api/users/logout';
+
+      try {
+        await axios.post(
+          API_LOGOUT,
+          {},
+          {
+            withCredentials: true,
+          },
+        );
+
+        window.location.href = '/';
+      } catch (error) {
+        console.error('Error al cerrar sesión:', error);
+        alert('Ocurrió un problema al cerrar la sesión. Intenta nuevamente.');
+      }
+    });
+  }
 
   getUsers();
 });

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('form-create-user');
   const errorMessage = document.getElementById('error-message');
   const btnSubmit = document.getElementById('btn-submit');
-
+  const btnLogout = document.getElementById('btn-logout');
   const API_URL = 'http://127.0.0.1:8000/api/users';
 
   form.addEventListener('submit', async (e) => {
@@ -45,4 +45,27 @@ document.addEventListener('DOMContentLoaded', () => {
       btnSubmit.innerHTML = 'Guardar Usuario';
     }
   });
+
+  if (btnLogout) {
+    btnLogout.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const API_LOGOUT = 'http://127.0.0.1:8000/api/users/logout';
+
+      try {
+        await axios.post(
+          API_LOGOUT,
+          {},
+          {
+            withCredentials: true,
+          },
+        );
+
+        window.location.href = '/';
+      } catch (error) {
+        console.error('Error al cerrar sesión:', error);
+        alert('Ocurrió un problema al cerrar la sesión. Intenta nuevamente.');
+      }
+    });
+  }
 });

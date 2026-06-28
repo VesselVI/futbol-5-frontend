@@ -5,13 +5,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const empIdSpan = document.getElementById('display-emp-id');
   const errorMessage = document.getElementById('error-message');
   const btnSubmit = document.getElementById('btn-submit');
-
-  // Configuración de URLs
-  const hostname = window.location.hostname;
+  const btnLogout = document.getElementById('btn-logout');
   const API_EMPLOYEES = `http://127.0.0.1:8000/api/employees`;
   const API_FACILITIES = `http://127.0.0.1:8000/api/facilities`;
-
-  // 1. Obtener el ID de la URL
   const urlParams = new URLSearchParams(window.location.search);
   const empId = urlParams.get('id');
 
@@ -21,22 +17,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  // 2. Función para cargar Sedes y Datos del Empleado simultáneamente
   const loadData = async () => {
     try {
-      // Disparamos ambas peticiones GET a tus controladores
-      const [facilitiesRes, empRes] = await Promise.all([
-        axios.get(API_FACILITIES, { withCredentials: true }),
-        axios.get(`${API_EMPLOYEES}/${empId}`, { withCredentials: true }),
-      ]);
+      const facilitiesRes = await axios.get(API_FACILITIES, {
+        withCredentials: true,
+      });
+      const empRes = await axios.get(`${API_EMPLOYEES}/${empId}`, {
+        withCredentials: true,
+      });
 
-      // -- A. Llenar el selector de Sedes --
       const facilities = facilitiesRes.data;
       selectFacility.innerHTML = facilities
         .map((f) => `<option value="${f.id}">${f.address}</option>`)
         .join('');
 
-      // -- B. Rellenar los inputs con los datos del empleado --
       const emp = empRes.data;
       empIdSpan.textContent = `#${emp.id_employee}`;
 
@@ -44,8 +38,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       document.getElementById('inputDni').value = emp.dni_employee;
       document.getElementById('inputPhone').value = emp.phone_employee;
 
-      // -- C. Seleccionar automáticamente los <select> --
-      // Esto ahora funcionará gracias a que agregaste estos campos en el backend
       selectFacility.value = emp.id_facility;
       selectStatus.value = emp.id_status_employee;
     } catch (error) {
@@ -57,10 +49,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   };
 
-  // Disparamos la carga al inicio
   await loadData();
 
-  // 3. Lógica para enviar el Update al backend
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     errorMessage.classList.add('d-none');
@@ -68,7 +58,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     btnSubmit.disabled = true;
     btnSubmit.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Guardando...`;
 
-    // Armamos el objeto con las mismas claves que espera tu req.body
     const updateData = {
       name_employee: document.getElementById('inputName').value.trim(),
       dni_employee: document.getElementById('inputDni').value.trim(),
@@ -103,4 +92,27 @@ document.addEventListener('DOMContentLoaded', async () => {
       btnSubmit.innerHTML = 'Actualizar Cambios';
     }
   });
+
+  if (btnLogout) {
+    btnLogout.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const API_LOGOUT = 'http://127.0.0.1:8000/api/users/logout';
+
+      try {
+        await axios.post(
+          API_LOGOUT,
+          {},
+          {
+            withCredentials: true,
+          },
+        );
+
+        window.location.href = '/';
+      } catch (error) {
+        console.error('Error al cerrar sesión:', error);
+        alert('Ocurrió un problema al cerrar la sesión. Intenta nuevamente.');
+      }
+    });
+  }
 });
