@@ -22,5 +22,4 @@ async function handleLogin(event) {
         console.log(error)
         alert("error en el inicio de sesión")
     }
-
 }
