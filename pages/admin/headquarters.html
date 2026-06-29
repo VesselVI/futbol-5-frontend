@@ -1,103 +1,122 @@
 <!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Sedes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-</head>
-<body class="bg-light">
-    <div class="d-flex" style="min-height: 100vh;">
-        <div class="d-flex flex-column flex-shrink-0 p-3 bg-white border-end shadow-sm"
-            style="width: 280px;">
-            <a href="/"
-                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <i class="bi bi-trophy fs-3 me-2 text-primary"></i>
-                <span class="fs-4 fw-bold">Fútbol 5</span>
-            </a>
-            <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="mt-3 mb-1 text-muted small fw-bold text-uppercase px-3">
-                    Sistema
-                </li>
-                <li><a href="#" class="nav-link link-dark"><i class="bi bi-people me-2"></i>Usuarios</a></li>
-                <li><a href="#" class="nav-link link-dark"><i class="bi bi-person-badge me-2"></i>Empleados</a></li>
-                <li>
-                    <a href="#collapseConfig"
-                        data-bs-toggle="collapse"
-                        class="nav-link link-dark d-flex align-items-center">
-                        <i class="bi bi-gear me-2"></i>
-                        Configuración
-                        <i class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                    <div class="collapse" id="collapseConfig">
-                        <ul class="nav flex-column ms-3">
-                            <li><a href="#" class="nav-link link-secondary small py-1"><i class="bi bi-dot"></i> Estados de Cancha</a></li>
-                            <li><a href="#" class="nav-link link-secondary small py-1"><i class="bi bi-dot"></i> Estados de Renta</a></li>
-                            <li><a href="#" class="nav-link link-secondary small py-1"><i class="bi bi-dot"></i> Categorías</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mt-4 mb-1 text-muted small fw-bold text-uppercase px-3">
-                    Instalaciones
-                </li>
-                <li><a href="#" class="nav-link active"><i class="bi bi-building me-2"></i>Sedes</a></li>
-                <li> <a href="fiels.html" class="nav-link link-dark"> <i class="bi bi-grid me-2"></i>Canchas</a></li>
-                <li class="mt-4 mb-1 text-muted small fw-bold text-uppercase px-3">
-                    Operaciones
-                </li>
-                <li><a href="#" class="nav-link link-dark"><i class="bi bi-calendar-check me-2"></i>Reservas</a></li>
-                
-            </ul>
-            <hr>
-            <div class="dropdown">
-                <a href="#"
-                    class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
-                    data-bs-toggle="dropdown">
-                    <strong>Admin</strong>
-                </a>
-                <ul class="dropdown-menu text-small shadow">
-                    <li><a class="dropdown-item text-danger" href="#">Cerrar sesión</a></li>
-                </ul>
-            </div>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <!-- <script src="../../assets/js/authGuard.js" defer></script> -->
+    <script src="../../assets/js/headquarters.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="d-flex" style="min-height: 100vh">
+      <div
+        class="d-flex flex-column flex-shrink-0 p-3 bg-white border-end shadow-sm"
+        style="width: 280px"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+        >
+          <i class="bi bi-trophy fs-3 me-2 text-primary"></i>
+          <span class="fs-4 fw-bold">Fútbol 5</span>
+        </a>
+        <hr />
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="mt-3 mb-1 text-muted small fw-bold text-uppercase px-3">
+            Sistema
+          </li>
+          <li>
+            <a href="users.html" class="nav-link link-dark"
+              ><i class="bi bi-people me-2"></i>Usuarios</a
+            >
+          </li>
+          <li>
+            <a href="employees.html" class="nav-link link-dark"
+              ><i class="bi bi-person-badge me-2"></i>Empleados</a
+            >
+          </li>
+          <li class="mt-4 mb-1 text-muted small fw-bold text-uppercase px-3">
+            Instalaciones
+          </li>
+          <li>
+            <a href="#" class="nav-link active"
+              ><i class="bi bi-building me-2"></i>Sedes</a
+            >
+          </li>
+          <li>
+            <a href="fiels.html" class="nav-link link-dark">
+              <i class="bi bi-grid me-2"></i>Canchas</a
+            >
+          </li>
+          <li class="mt-4 mb-1 text-muted small fw-bold text-uppercase px-3">
+            Operaciones
+          </li>
+          <li>
+            <a href="rentals.html" class="nav-link link-dark"
+              ><i class="bi bi-calendar-check me-2"></i>Reservas</a
+            >
+          </li>
+        </ul>
+        <hr />
+        <div class="dropdown">
+          <a
+            href="#"
+            class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+            data-bs-toggle="dropdown"
+          >
+            <strong>Admin</strong>
+          </a>
+          <ul class="dropdown-menu text-small shadow">
+            <li>
+              <a class="dropdown-item text-danger" href="#" id="btn-logout"
+                >Cerrar sesión</a
+              >
+            </li>
+          </ul>
         </div>
-        <div class="p-4 w-100">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2>Gestión de Sedes</h2>
-                <button id="btnNewHeadquarters" class="btn btn-primary">
-                    <i class="bi bi-plus-circle"></i>
-                    Nueva Sede
-                </button>
-            </div>
-            <div class="card shadow-sm">
-                <div class="card-header bg-white">
-                    <strong>Listado de Sedes</strong>
-                </div>
-                <div class="card-body table table-hover align-middle text-center">
-                    <table class="table table-hover align-middle">
-                        <thead class="table-light">
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Dirección</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableHeadquarters">
-                            <!-- Las sedes se cargan desde headquarters.js -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+      </div>
+      <div class="p-4 w-100">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2>Gestión de Sedes</h2>
+          <button id="btnNewHeadquarters" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i>
+            Nueva Sede
+          </button>
         </div>
+        <div class="card shadow-sm">
+          <div class="card-header bg-white">
+            <strong>Listado de Sedes</strong>
+          </div>
+          <div class="card-body table table-hover align-middle text-center">
+            <table class="table table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Dirección</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tableHeadquarters">
+                <!-- Las sedes se cargan desde headquarters.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
     <a href="fiels.html" class="nav-link link-dark">
-    <i class="bi bi-grid me-2"></i>
-    Canchas
-</a>
-    <script src="../../assets/js/headquarters.js"></script>
+      <i class="bi bi-grid me-2"></i>
+      Canchas
+    </a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
