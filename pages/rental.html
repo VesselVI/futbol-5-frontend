@@ -1,438 +1,512 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="/assets/js/rental.js" defer></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/rental.css">
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/rental.css" />
     <title>Sacar Turno</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar main-nav fixed-top py-3 navbar-expand-lg">
-            <div class="container d-flex justify-content-between align-items-center">
-
-                <!-- Logo -->
-                <div class="leftNavContainer d-flex ">
-                    <div class="dropdown">
-                        <button class="profile-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img class="avatar-img avatar-sm" src="#" alt="">
-                            <span class="profile-name d-none d-sm-inline">Perfil</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu">
-                            <li><a class="dropdown-item" href="/pages/Profile/MyRentals.html">Mis Turnos</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="/pages/login.html">Cerrar sesión</a></li>
-                        </ul>
-                    </div>
-                    <div class="d-flex align-items-center gap-2 brand-logo">
-                        <i class='bx bx-football bx-sm'></i>
-                        <h4 class="fw-bold m-0 Logo">Futbol 5</h4>
-                    </div>
-                </div>
-
-                <!-- Desktop Menu (visible on large screesns only) -->
-                <ul class="nav d-none d-lg-flex">
-                    <li class="nav-item"><a class="nav-link " href="/index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link " href="/pages/prices.html">Precios</a></li>
-                    <li class="nav-item"><a class="nav-link " href="#Canchas">Canchas</a></li>
-                    <li class="nav-item"><a class="nav-link " id="focus-tab" href="#">Sacar
-                            Turno</a></li>
-
-
-                </ul>
-                <div class="navBtnGroup d-flex align-items-center gap-3">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch">
-                        <label class="form-check-label" for="switchCheckDefault">Night Mode</label>
-                    </div>
-                </div>
-                <!-- Burger Button (Mobile Only) -->
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileMenu">
-
-                    <i class="bi bi-list fs-1"></i>
-                </button>
-
+      <nav class="navbar main-nav fixed-top py-3 navbar-expand-lg">
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <!-- Logo -->
+          <div class="leftNavContainer d-flex">
+            <div class="dropdown">
+              <button
+                class="profile-button dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img class="avatar-img avatar-sm" src="#" alt="" />
+                <span class="profile-name d-none d-sm-inline">Perfil</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/pages/Profile/MyRentals.html"
+                    >Mis Turnos</a
+                  >
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/login.html"
+                    >Cerrar sesión</a
+                  >
+                </li>
+              </ul>
             </div>
-        </nav>
-        <div class="offcanvas offcanvas-end" id="mobileMenu" style="background-color: var(--attention)">
-
-            <div class="offcanvas-header">
-                <div class="d-flex align-items-center gap-2 brand-logo">
-                    <i class="fa-solid fa-tooth"></i>
-                    <h4 class="fw-bold m-0">Futbol 5</h4>
-                </div>
-
-                <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            <div class="d-flex align-items-center gap-2 brand-logo">
+              <i class="bx bx-football bx-sm"></i>
+              <h4 class="fw-bold m-0 Logo">Futbol 5</h4>
             </div>
+          </div>
 
-            <div class="offcanvas-body">
-
-                <ul class="navbar-nav gap-2">
-
-                    <li class="nav-item"><a class="nav-link " href="/index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link " href="/pages/prices.html">Precios</a></li>
-                    <li class="nav-item"><a class="nav-link " href="#Canchas">Canchas</a></li>
-
-                </ul>
-
-                <a class="btn w-100 mt-3" style="background-color: var(--bodyText); color: black;"
-                    href="/pages/login.html">Iniciar
-                    Sesión</a>
-
+          <!-- Desktop Menu (visible on large screesns only) -->
+          <ul class="nav d-none d-lg-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="/indexAuth.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/prices.html">Precios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Canchas">Canchas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="focus-tab" href="#">Sacar Turno</a>
+            </li>
+          </ul>
+          <div class="navBtnGroup d-flex align-items-center gap-3">
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="themeSwitch"
+              />
+              <label class="form-check-label" for="switchCheckDefault"
+                >Night Mode</label
+              >
             </div>
+          </div>
+          <!-- Burger Button (Mobile Only) -->
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+          >
+            <i class="bi bi-list fs-1"></i>
+          </button>
+        </div>
+      </nav>
+      <div
+        class="offcanvas offcanvas-end"
+        id="mobileMenu"
+        style="background-color: var(--attention)"
+      >
+        <div class="offcanvas-header">
+          <div class="d-flex align-items-center gap-2 brand-logo">
+            <i class="fa-solid fa-tooth"></i>
+            <h4 class="fw-bold m-0">Futbol 5</h4>
+          </div>
 
+          <button class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
 
+        <div class="offcanvas-body">
+          <ul class="navbar-nav gap-2">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/prices.html">Precios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Canchas">Canchas</a>
+            </li>
+          </ul>
 
+          <a
+            class="btn w-100 mt-3"
+            style="background-color: var(--bodyText); color: black"
+            href="/pages/login.html"
+            >Iniciar Sesión</a
+          >
+        </div>
+      </div>
     </header>
 
     <section class="booking-section py-5" id="reservar">
-        <div class="container mt-5">
-
-            <div class="text-center mb-4">
-                <span class="section-eyebrow">Reservá tu turno</span>
-                <h2 class="fw-bold mt-1">Elegí tu cancha, día y horario</h2>
-            </div>
-
-            <div id="fieldsCarousel" class="carousel slide field-carousel mb-5 rounded-4 overflow-hidden shadow-sm">
-                <!-- quitar auto-start "carousel data-bs" -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="/assets/img/Cancha-1.webp" class="d-block w-100 carousel-img"
-                            alt="Cancha 1 - Futbol 5">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="m-0">Cancha 1</h5>
-                            <p class="m-0 small">Césped sintético · Techada</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/assets/img/Cancha-2.webp" class="d-block w-100 carousel-img"
-                            alt="Cancha 2 - Futbol 5">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="m-0">Cancha 2</h5>
-                            <p class="m-0 small">Césped sintético · Aire libre</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/assets/img/Cancha-3.webp" class="d-block w-100 carousel-img"
-                            alt="Cancha 3 - Futbol 5">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="m-0">Cancha 3</h5>
-                            <p class="m-0 small">Césped sintético · Iluminación nocturna</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/assets/img/Cancha-4.webp" class="d-block w-100 carousel-img"
-                            alt="Cancha 4 - Futbol 5">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="m-0">Cancha 4</h5>
-                            <p class="m-0 small">Césped sintético · Iluminación nocturna</p>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#fieldsCarousel"
-                    data-bs-slide="prev">
-                    <i class='bx bx-chevron-left'></i>
-                </button>
-
-                <button class="carousel-control-next" type="button" data-bs-target="#fieldsCarousel"
-                    data-bs-slide="next">
-                    <i class='bx bx-chevron-right'></i>
-                </button>
-            </div>
-
-            <form class="booking-form p-4 p-lg-5 rounded-4" id="formBooking" novalidate>
-                <div class="row g-3 align-items-end">
-
-                    <div class="col-12 col-lg-3">
-                        <label for="fieldSelect" class="form-label fw-semibold">Cancha</label>
-                        <select name="id_field" class="form-select" id="fieldSelect" required>
-                            <option value="" selected disabled>Elegí una cancha</option>
-                            <option value="1">Cancha 1 — Techada</option>
-                            <option value="2">Cancha 2 — Aire libre</option>
-                            <option value="3">Cancha 3 — Nocturna</option>
-
-                        </select>
-                    </div>
-
-
-                    <div class="col-12 col-lg-3">
-                        <label for="rentalDate" class="form-label fw-semibold">Fecha</label>
-                        <input name="rental_date" type="date" class="form-control" id="rentalDate" required>
-                    </div>
-
-                    <div class="col-12 col-lg-3">
-                        <label for="timeSlot" class="form-label fw-semibold">Horario de entrada</label>
-                        <select name="rental_start" class="form-select" id="timeSlot" required>
-                            <option value="" selected disabled>Elegí un horario</option>
-                            <option value="18:00">18:00</option>
-                            <option value="19:00">19:00</option>
-                            <option value="20:00">20:00</option>
-                            <option value="21:00">21:00</option>
-                            <option value="22:00">22:00</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-lg-3">
-                        <label for="timeSlot" class="form-label fw-semibold">Horario de Salida</label>
-                        <select name="rental_end" class="form-select" id="timeSlot" required>
-                            <option value="" selected disabled>Elegí un horario</option>
-                            <option value="19:00">19:00</option>
-                            <option value="20:00">20:00</option>
-                            <option value="21:00">21:00</option>
-                            <option value="22:00">22:00</option>
-                            <option value="23:00">23:00</option>
-                        </select>
-                    </div>
-
-                    <div class="col-12 col-lg-3">
-                        <button type="submit" class="btn w-100 rentBtn">Reservar Ahora</button>
-                    </div>
-
-                </div>
-            </form>
-
+      <div class="container mt-5">
+        <div class="text-center mb-4">
+          <span class="section-eyebrow">Reservá tu turno</span>
+          <h2 class="fw-bold mt-1">Elegí tu cancha, día y horario</h2>
         </div>
+
+        <div
+          id="fieldsCarousel"
+          class="carousel slide field-carousel mb-5 rounded-4 overflow-hidden shadow-sm"
+        >
+          <!-- quitar auto-start "carousel data-bs" -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="/assets/img/Cancha-1.webp"
+                class="d-block w-100 carousel-img"
+                alt="Cancha 1 - Futbol 5"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="m-0">Cancha 1</h5>
+                <p class="m-0 small">Césped sintético · Techada</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/assets/img/Cancha-2.webp"
+                class="d-block w-100 carousel-img"
+                alt="Cancha 2 - Futbol 5"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="m-0">Cancha 2</h5>
+                <p class="m-0 small">Césped sintético · Aire libre</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/assets/img/Cancha-3.webp"
+                class="d-block w-100 carousel-img"
+                alt="Cancha 3 - Futbol 5"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="m-0">Cancha 3</h5>
+                <p class="m-0 small">Césped sintético · Iluminación nocturna</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/assets/img/Cancha-4.webp"
+                class="d-block w-100 carousel-img"
+                alt="Cancha 4 - Futbol 5"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="m-0">Cancha 4</h5>
+                <p class="m-0 small">Césped sintético · Iluminación nocturna</p>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#fieldsCarousel"
+            data-bs-slide="prev"
+          >
+            <i class="bx bx-chevron-left"></i>
+          </button>
+
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#fieldsCarousel"
+            data-bs-slide="next"
+          >
+            <i class="bx bx-chevron-right"></i>
+          </button>
+        </div>
+
+        <form
+          class="booking-form p-4 p-lg-5 rounded-4"
+          id="formBooking"
+          novalidate
+        >
+          <div class="row g-3 align-items-end">
+            <div class="col-12 col-lg-3">
+              <label for="fieldSelect" class="form-label fw-semibold"
+                >Cancha</label
+              >
+              <select
+                name="id_field"
+                class="form-select"
+                id="fieldSelect"
+                required
+              >
+                <option value="" selected disabled>Elegí una cancha</option>
+                <option value="1">Cancha 1 — Techada</option>
+                <option value="2">Cancha 2 — Aire libre</option>
+                <option value="3">Cancha 3 — Nocturna</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-lg-3">
+              <label for="rentalDate" class="form-label fw-semibold"
+                >Fecha</label
+              >
+              <input
+                name="rental_date"
+                type="date"
+                class="form-control"
+                id="rentalDate"
+                required
+              />
+            </div>
+
+            <div class="col-12 col-lg-3">
+              <label for="timeSlot" class="form-label fw-semibold"
+                >Horario de entrada</label
+              >
+              <select
+                name="rental_start"
+                class="form-select"
+                id="timeSlot"
+                required
+              >
+                <option value="" selected disabled>Elegí un horario</option>
+                <option value="18:00">18:00</option>
+                <option value="19:00">19:00</option>
+                <option value="20:00">20:00</option>
+                <option value="21:00">21:00</option>
+                <option value="22:00">22:00</option>
+              </select>
+            </div>
+            <div class="col-12 col-lg-3">
+              <label for="timeSlot" class="form-label fw-semibold"
+                >Horario de Salida</label
+              >
+              <select
+                name="rental_end"
+                class="form-select"
+                id="timeSlot"
+                required
+              >
+                <option value="" selected disabled>Elegí un horario</option>
+                <option value="19:00">19:00</option>
+                <option value="20:00">20:00</option>
+                <option value="21:00">21:00</option>
+                <option value="22:00">22:00</option>
+                <option value="23:00">23:00</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-lg-3">
+              <button type="submit" class="btn w-100 rentBtn">
+                Reservar Ahora
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </section>
     <!-- Caracteristicas -->
-    <section class="container py-5 features-grid " data-aos="fade-up">
-
-        <div class="row g-4">
-
-            <div class="col-md-4 feature-col pt-2" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-item">
-                    <i class="bi bi-stars feature-icon"></i>
-                    <h5>Césped Pro</h5>
-                    <p>Alfombra sintética de última generación con caucho Premium. Máximo agarre, pique perfecto y
-                        protección contra lesiones.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 feature-col" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-item">
-                    <i class="bi bi-brightness-alt-high-fill" style="font-size: 3rem;"></i>
-                    <h5>Iluminación LED</h5>
-                    <p>Reflectores de alta potencia sin zonas oscuras. Visibilidad total para jugar de noche como si
-                        fuera de día.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 feature-col" style="padding-top: 2.2vh;" data-aos="fade-up" data-aos-delay="400">
-                <div class="feature-item">
-                    <i class="bi bi-hourglass-bottom" style="font-size: 2.4rem;"></i>
-
-                    <h5>Tercer Tiempo</h5>
-                    <p>Vestuarios con ducha caliente, lockers y buffet con bebidas heladas para el post-partido.</p>
-                </div>
-            </div>
-
+    <section class="container py-5 features-grid" data-aos="fade-up">
+      <div class="row g-4">
+        <div
+          class="col-md-4 feature-col pt-2"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div class="feature-item">
+            <i class="bi bi-stars feature-icon"></i>
+            <h5>Césped Pro</h5>
+            <p>
+              Alfombra sintética de última generación con caucho Premium. Máximo
+              agarre, pique perfecto y protección contra lesiones.
+            </p>
+          </div>
         </div>
-        <div id="Canchas"></div>
+
+        <div
+          class="col-md-4 feature-col"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div class="feature-item">
+            <i
+              class="bi bi-brightness-alt-high-fill"
+              style="font-size: 3rem"
+            ></i>
+            <h5>Iluminación LED</h5>
+            <p>
+              Reflectores de alta potencia sin zonas oscuras. Visibilidad total
+              para jugar de noche como si fuera de día.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="col-md-4 feature-col"
+          style="padding-top: 2.2vh"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <div class="feature-item">
+            <i class="bi bi-hourglass-bottom" style="font-size: 2.4rem"></i>
+
+            <h5>Tercer Tiempo</h5>
+            <p>
+              Vestuarios con ducha caliente, lockers y buffet con bebidas
+              heladas para el post-partido.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="Canchas"></div>
     </section>
 
     <!-- Canchas -->
     <section class="container my-5" data-aos="fade-up">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Nuestras canchas</h2>
+        <p class="text-muted">
+          Contamos con las mejores canchas para que se adapten a lo que buscas.
+        </p>
+      </div>
 
-        <div class="text-center mb-4">
+      <div class="row g-4">
+        <!-- Cancha de Futbol 5 -->
+        <div class="col-md-6">
+          <div class="blog-card">
+            <img src="/assets/img/Cancha-1.webp" alt="cancha-5" />
 
-            <h2 class="fw-bold">Nuestras canchas</h2>
-            <p class="text-muted">
-                Contamos con las mejores canchas para que se adapten a lo que buscas.
-            </p>
+            <div class="blog-content">
+              <h5 class="fw-bold">Cancha de futbol 5</h5>
+
+              <small class="text-muted">Césped Sintético</small>
+
+              <p>
+                Medidas reglamentarias ideales para un partido rápido y dinámico
+                entre amigos. Techada y con iluminación LED de alta potencia.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="row g-4">
+        <!-- Cancha de futbol 7 -->
+        <div class="col-md-6">
+          <div class="blog-card">
+            <img src="/assets/img/Cancha-2.webp" class="blog-img" />
 
-            <!-- Cancha de Futbol 5 -->
-            <div class="col-md-6">
-                <div class="blog-card">
+            <div class="blog-content">
+              <h5 class="fw-bold">Cancha de futbol 7</h5>
 
-                    <img src="/assets/img/Cancha-1.webp" alt="cancha-5">
+              <small class="text-muted">Formato Semi-Profesional</small>
 
-                    <div class="blog-content">
-                        <h5 class="fw-bold">
-                            Cancha de futbol 5
-                        </h5>
-
-                        <small class="text-muted">Césped Sintético</small>
-
-                        <p>
-                            Medidas reglamentarias ideales para un partido rápido y dinámico entre amigos. Techada y con
-                            iluminación LED de alta potencia.
-                        </p>
-
-
-                    </div>
-
-                </div>
+              <p>
+                El equilibrio perfecto entre toque y desgaste físico. Ideal para
+                torneos relámpago o partidos de fin de semana.
+              </p>
             </div>
-
-            <!-- Cancha de futbol 7 -->
-            <div class="col-md-6">
-                <div class="blog-card">
-
-                    <img src="/assets/img/Cancha-2.webp" class="blog-img">
-
-                    <div class="blog-content">
-                        <h5 class="fw-bold">
-                            Cancha de futbol 7
-                        </h5>
-
-                        <small class="text-muted">Formato Semi-Profesional</small>
-
-                        <p>
-                            El equilibrio perfecto entre toque y desgaste físico. Ideal para torneos relámpago o
-                            partidos de fin de semana.
-                        </p>
-
-
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Cancha de futbol 9 -->
-            <div class="col-md-6">
-                <div class="blog-card">
-
-                    <img src="/assets/img/Cancha-3.webp" class="blog-img">
-
-                    <div class="blog-content">
-                        <h5 class="fw-bold">
-                            Cancha de futbol 9
-                        </h5>
-
-                        <small class="text-muted">Espacio Intermedio</small>
-
-                        <p>
-                            Espacio amplio para desplegar táctica y juego en equipo. Césped de última generación con
-                            excelente amortiguación.
-                        </p>
-
-
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Cancha de futbol 10 -->
-            <div class="col-md-6">
-                <div class="blog-card">
-
-                    <img src="/assets/img/Cancha-4.webp" class="blog-img">
-
-                    <div class="blog-content">
-                        <h5 class="fw-bold">
-                            Cancha de Futbol 10
-                        </h5>
-
-                        <small class="text-muted">Césped Sintético</small>
-
-                        <p>
-                            Viví la experiencia del fútbol profesional. Ideal para planteles completos, entrenamientos
-                            tácticos y ligas competitivas.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-
+          </div>
         </div>
 
+        <!-- Cancha de futbol 9 -->
+        <div class="col-md-6">
+          <div class="blog-card">
+            <img src="/assets/img/Cancha-3.webp" class="blog-img" />
+
+            <div class="blog-content">
+              <h5 class="fw-bold">Cancha de futbol 9</h5>
+
+              <small class="text-muted">Espacio Intermedio</small>
+
+              <p>
+                Espacio amplio para desplegar táctica y juego en equipo. Césped
+                de última generación con excelente amortiguación.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cancha de futbol 10 -->
+        <div class="col-md-6">
+          <div class="blog-card">
+            <img src="/assets/img/Cancha-4.webp" class="blog-img" />
+
+            <div class="blog-content">
+              <h5 class="fw-bold">Cancha de Futbol 10</h5>
+
+              <small class="text-muted">Césped Sintético</small>
+
+              <p>
+                Viví la experiencia del fútbol profesional. Ideal para planteles
+                completos, entrenamientos tácticos y ligas competitivas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-
 
     <!-- Footer Section -->
     <footer class="footer-section py-5 mt-5">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Menu -->
+          <div class="col-lg-2">
+            <h6 class="fw-bold mb-3" style="color: var(--bodyText)">Menu</h6>
 
-        <div class="container">
+            <ul class="footer-links">
+              <li><a href="/index.html">Inicio</a></li>
+              <li><a href="/pages/prices.html">Precios</a></li>
+              <li><a href="#Canchas">Canchas</a></li>
+            </ul>
+          </div>
 
-            <div class="row g-4">
+          <!-- Contact nav -->
+          <div class="col-lg-3">
+            <h6 class="fw-bold mb-3" style="color: var(--bodyText)">
+              Contacto
+            </h6>
 
+            <ul class="footer-contact">
+              <li>
+                <i class="bi bi-envelope"></i>
+                futbol5@gmail.com
+              </li>
 
+              <li>
+                <i class="bi bi-telephone"></i>
+                +51 0 381 432 222
+              </li>
 
-                <!-- Menu -->
-                <div class="col-lg-2">
-                    <h6 class="fw-bold mb-3" style="color: var(--bodyText);">Menu</h6>
-
-                    <ul class="footer-links">
-                        <li><a href="/index.html">Inicio</a></li>
-                        <li><a href="/pages/prices.html">Precios</a></li>
-                        <li><a href="#Canchas">Canchas</a></li>
-                    </ul>
-                </div>
-
-
-
-                <!-- Contact nav -->
-                <div class="col-lg-3">
-                    <h6 class="fw-bold mb-3" style="color: var(--bodyText);">Contacto</h6>
-
-                    <ul class="footer-contact">
-
-                        <li>
-                            <i class="bi bi-envelope"></i>
-                            futbol5@gmail.com
-                        </li>
-
-                        <li>
-                            <i class="bi bi-telephone"></i>
-                            +51 0 381 432 222
-                        </li>
-
-                        <li>
-                            <i class="bi bi-geo-alt"></i>
-                            Las heras 551, San miguel de Tucuman<br>
-                            - Tucuman
-                        </li>
-
-                    </ul>
-                </div>
-
-            </div>
-
-            <hr class="my-4">
-
-            <!-- Bottom Bar -->
-            <div class="d-flex justify-content-between align-items-center flex-wrap">
-
-                <div class="social-icons d-flex gap-2">
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-twitter"></i>
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-youtube"></i>
-                    <i class="bi bi-linkedin"></i>
-                </div>
-
-            </div>
-
+              <li>
+                <i class="bi bi-geo-alt"></i>
+                Las heras 551, San miguel de Tucuman<br />
+                - Tucuman
+              </li>
+            </ul>
+          </div>
         </div>
 
+        <hr class="my-4" />
+
+        <!-- Bottom Bar -->
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap"
+        >
+          <div class="social-icons d-flex gap-2">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-youtube"></i>
+            <i class="bi bi-linkedin"></i>
+          </div>
+        </div>
+      </div>
     </footer>
 
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
