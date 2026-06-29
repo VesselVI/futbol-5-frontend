@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/assets/js/MyRentals.js" defer></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/rental.css">
+    <title>Sacar Turno</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar main-nav fixed-top py-3 navbar-expand-lg">
+            <div class="container d-flex justify-content-between align-items-center">
+
+                <!-- Logo -->
+                <div class="leftNavContainer d-flex ">
+                    <div class="dropdown">
+                        <button class="profile-button dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img class="avatar-img avatar-sm" src="#" alt="">
+                            <span class="profile-name d-none d-sm-inline">Perfil</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html">Mis Turnos</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/pages/login.html">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 brand-logo">
+                        <i class='bx bx-football bx-sm'></i>
+                        <h4 class="fw-bold m-0 Logo">Futbol 5</h4>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu (visible on large screesns only) -->
+                <ul class="nav d-none d-lg-flex">
+                    <li class="nav-item"><a class="nav-link " href="/indexAuth.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link " href="/pages/prices.html">Precios</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#Canchas">Canchas</a></li>
+                    <li class="nav-item"><a class="nav-link " id="focus-tab" href="/pages/rental.html">Sacar
+                            Turno</a></li>
+
+
+                </ul>
+                <div class="navBtnGroup d-flex align-items-center gap-3">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch">
+                        <label class="form-check-label" for="switchCheckDefault">Night Mode</label>
+                    </div>
+                </div>
+                <!-- Burger Button (Mobile Only) -->
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu">
+
+                    <i class="bi bi-list fs-1"></i>
+                </button>
+
+            </div>
+        </nav>
+        <div class="offcanvas offcanvas-end" id="mobileMenu" style="background-color: var(--attention)">
+
+            <div class="offcanvas-header">
+                <div class="d-flex align-items-center gap-2 brand-logo">
+                    <i class="fa-solid fa-tooth"></i>
+                    <h4 class="fw-bold m-0">Futbol 5</h4>
+                </div>
+
+                <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+
+            <div class="offcanvas-body">
+
+                <ul class="navbar-nav gap-2">
+
+                    <li class="nav-item"><a class="nav-link " href="/index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link " href="/pages/prices.html">Precios</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#Canchas">Canchas</a></li>
+
+                </ul>
+
+                <a class="btn w-100 mt-3" style="background-color: var(--bodyText); color: black;"
+                    href="/pages/login.html">Iniciar
+                    Sesión</a>
+
+            </div>
+
+        </div>
+
+
+    </header>
+
+    <section class="panel panelBody">
+        <div class="panel-header">
+            <div>
+                <h2 class="h5 mb-1 section-title">
+
+                    <span>Mis Reservas</span>
+                </h2>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col">Reserva</th>
+                        <th scope="col">Cancha</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Horario de Inicio</th>
+                        <th scope="col">Horario de Salida</th>
+                        <th scope="col">Acciónes</th>
+                    </tr>
+                </thead>
+
+                <tbody id="rentalsTableBody">
+                    <!-- Render dinámico -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <footer class="footer-section py-5 mt-5">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+
+
+                <!-- Menu -->
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3" style="color: var(--bodyText);">Menu</h6>
+
+                    <ul class="footer-links">
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/pages/prices.html">Precios</a></li>
+                        <li><a href="#Canchas">Canchas</a></li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Contact nav -->
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3" style="color: var(--bodyText);">Contacto</h6>
+
+                    <ul class="footer-contact">
+
+                        <li>
+                            <i class="bi bi-envelope"></i>
+                            futbol5@gmail.com
+                        </li>
+
+                        <li>
+                            <i class="bi bi-telephone"></i>
+                            +51 0 381 432 222
+                        </li>
+
+                        <li>
+                            <i class="bi bi-geo-alt"></i>
+                            Las heras 551, San miguel de Tucuman<br>
+                            - Tucuman
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <!-- Bottom Bar -->
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+                <div class="social-icons d-flex gap-2">
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-twitter"></i>
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-youtube"></i>
+                    <i class="bi bi-linkedin"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

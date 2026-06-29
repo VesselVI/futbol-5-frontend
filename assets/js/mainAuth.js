@@ -3,6 +3,17 @@ import { requireAuth } from "./AuthPages.js"; // ajustá el path
 const authenticated = await requireAuth();
 
 if (authenticated) {
+
+  document.getElementById("btnLogout").addEventListener("click", async () => {
+    try {
+      await logout();
+      window.location.href = "../../pages/login.html";
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error);
+      alert("No se pudo cerrar la sesión");
+    }
+  });
+
   window.addEventListener("scroll", function () {
     const nav = document.querySelector(".main-nav");
 
@@ -86,7 +97,6 @@ if (authenticated) {
       theme
     );
   });
-  // initPage();
-  // loadRentals();
+
 }
 

@@ -26,13 +26,13 @@ form.addEventListener("submit", async (e) => {
     }
     try {
         await createRental(payload);
-        alert("✅ Reserva creada correctamente");
+        alert(" Reserva creada correctamente");
         form.reset();
     } catch (error) {
         if (error.response?.status === 409) {
-            alert("⛔ La cancha ya está ocupada en ese horario");
+            alert(" La cancha ya está ocupada en ese horario");
         } else {
-            alert("❌ Error al crear la reserva");
+            alert("Error al crear la reserva");
         }
     }
 

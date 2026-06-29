@@ -16,3 +16,15 @@ export async function isAuthenticated() {
         return false;
     }
 }
+
+export const getRentalByUserId = () => {
+    return api.get("/rental/rentals");
+};
+
+export const deleteRental = (id) => {
+    return api.delete(`/rental/${id}`);
+};
+
+export const logout = () => {
+    return api.post("/users/logout");
+}
