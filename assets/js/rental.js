@@ -144,5 +144,3 @@ themeSwitch.addEventListener("change", () => {
     );
 });
 
-
-
